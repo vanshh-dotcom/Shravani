@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Someone Special</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  top: 30%;
+  transform: translateY(-30%);
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 28px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#yesBtn {
+  background: #ff416c;
+  color: white;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  background: white;
+  color: #ff416c;
+  position: absolute;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  transform: rotate(45deg);
+  animation: floatUp 6s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Hey...</h1>
+  <h2>There’s something I’ve been meaning to ask you.</h2>
+  <h2> I lovee youu so muchh shravanii🫶🎀😭
+  Will you be my gf???</h2>
+
+  <button id="yesBtn" onclick="celebrate()">Yes</button>
+  <button id="noBtn" onmouseover="moveButton()">No</button>
+</div>
+
+<script>
+
+/* Page open pe soft hearts */
+for (let i = 0; i < 10; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.top = window.innerHeight + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+}
+
+/* YES button function */
+function celebrate() {
+  document.body.innerHTML = `
+  <div style="margin-top:15%; padding:20px; animation: fadeIn 2s ease-in-out;">
+    <h1 style="font-size:42px; margin-bottom:20px;">You said YES ❤️</h1>
+    <p style="font-size:20px; max-width:700px; margin:auto; line-height:1.6;">
+      Shravani, I don’t know what the future holds, 
+      but I know one thing for sure — 
+      every conversation with you has become my favorite part of the day. 
+      You make ordinary moments feel special, 
+      and your smile (even through a screen) means more than you know. 
+      I promise to respect you, support you, 
+      and always be honest with you. 
+      Today isn’t just about a “yes”… 
+      it’s about choosing each other. 
+      And I’m really glad you chose me.
+    </p>
+  </div>
+  `;
+
+  for (let i = 0; i < 40; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+  }
+}
+
+/* NO button bhagega */
+function moveButton() {
+  let button = document.getElementById("noBtn");
+  button.style.top = Math.random() * window.innerHeight + "px";
+  button.style.left = Math.random() * window.innerWidth + "px";
+}
+
+</script>
+
+</body>
+</html>
